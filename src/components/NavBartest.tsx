@@ -10,7 +10,7 @@ import DropDownLogin from "../components/DropDownLogin";
 import souvla from "/images/xsushi-sign.png";
 import Link from "next/link";
 import { Navbar, Text, Avatar, Dropdown, Input } from "@nextui-org/react";
-import { SearchIcon } from "./SearchIcon.js";
+
 import { Spacer } from "@nextui-org/react";
 
 function NavBar() {
