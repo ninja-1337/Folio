@@ -40,6 +40,12 @@ const Home: NextPage = () => {
             description="Currently Down due to Kovan network Discontinuation-- Polygon Deployment Underway -- "
             documentation="https://souvlaswap.com/"
           />
+
+          <TechnologyCard
+            name="Busy Card"
+            description="A business email signature generator "
+            documentation="https://busy-card-ninja-1337.vercel.app"
+          />
         </div>
       </main>
     </>
