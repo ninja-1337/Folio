@@ -46,6 +46,12 @@ const Home: NextPage = () => {
             description="A business email signature generator "
             documentation="https://busy-card-ninja-1337.vercel.app"
           />
+
+          <TechnologyCard
+            name="SunSpot"
+            description="A beach booking app--In Progress--"
+            documentation="/"
+          />
         </div>
       </main>
     </>
