@@ -45,7 +45,7 @@ function NavBar() {
         hideIn="xs"
         variant="highlight"
       >
-        <Link color="secondary" href="projects">
+        <Link color="secondary" href="/">
           Projects
         </Link>
         <Spacer />
