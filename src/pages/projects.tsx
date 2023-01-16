@@ -26,16 +26,21 @@ const Home: NextPage = () => {
             description="The React framework for production"
             documentation="https://souvlaswap.com/"
           />
+
+          <TechnologyCard
+            name="Verbal-Agent"
+            description="A variety of agents for different tasks powered by GPT-3 "
+            documentation="https://ninja1337.com/"
+          />
+          <TechnologyCard
+            name="Pay Trends"
+            description="Payment data for diferent job positions around the world"
+            documentation="https://trend-teal.vercel.app/"
+          />
           <TechnologyCard
             name="Stripe Shop"
             description="A template for an e-shop with shopping cart using react and Stripe"
             documentation="https://with-stripe-typescript-dun.vercel.app/"
-          />
-
-          <TechnologyCard
-            name="Next-Auth"
-            description="Authentication for Next.js"
-            documentation="https://next-auth.js.org/"
           />
         </div>
       </main>
