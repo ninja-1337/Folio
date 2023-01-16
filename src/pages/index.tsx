@@ -38,7 +38,7 @@ const Home: NextPage = () => {
           <TechnologyCard
             name="SouvlaSwap"
             description="Currently Down due to Kovan network Discontinuation-- Polygon Deployment Underway -- "
-            documentation="https://souvlaswap.com/"
+            documentation="https://souvlaswap-interface.vercel.app/"
           />
 
           <TechnologyCard
