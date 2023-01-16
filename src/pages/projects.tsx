@@ -19,14 +19,7 @@ const Home: NextPage = () => {
         <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
           <span className="text-orange-300">Portfolio</span>
         </h1>
-        <p className="text-2xl text-gray-700">This stack uses:</p>
         <div className="mt-3 grid gap-3 pt-3 text-center md:grid-cols-3 lg:w-2/3">
-          <TechnologyCard
-            name="SouvlaSwap"
-            description="The React framework for production"
-            documentation="https://souvlaswap.com/"
-          />
-
           <TechnologyCard
             name="Verbal-Agent"
             description="A variety of agents for different tasks powered by GPT-3 "
@@ -41,6 +34,11 @@ const Home: NextPage = () => {
             name="Stripe Shop"
             description="A template for an e-shop with shopping cart using react and Stripe"
             documentation="https://with-stripe-typescript-dun.vercel.app/"
+          />
+          <TechnologyCard
+            name="SouvlaSwap"
+            description="Currently Down due to Kovan network Discontinuation-- Polygon Deployment Underway -- "
+            documentation="https://souvlaswap.com/"
           />
         </div>
       </main>
