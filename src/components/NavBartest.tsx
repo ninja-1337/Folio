@@ -168,7 +168,7 @@ function NavBar() {
       </Navbar.Content>
       <Navbar.Collapse disableAnimation>
       <Navbar.CollapseItem key="About" activeColor="warning">
-          <Link onClick={() => HandleSideMenu()} color="inherit" href="/projects">
+          <Link onClick={() => HandleSideMenu()} color="inherit" href="/">
             Projects
           </Link>
         </Navbar.CollapseItem>
