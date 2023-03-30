@@ -44,7 +44,7 @@ function NavBar() {
       >
         <Link href="/">
           <Text b color="inherit" hideIn="xs">
-            Verbal Agent
+            Portfolio
           </Text>
         </Link>
       </Navbar.Brand>
