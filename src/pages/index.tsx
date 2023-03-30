@@ -50,7 +50,7 @@ const Home: NextPage = () => {
           <TechnologyCard
             name="SunSpot"
             description="A beach booking app--In Progress--"
-            documentation="/"
+            documentation="https://sunspot-bay.vercel.app/"
           />
         </div>
       </main>
