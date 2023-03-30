@@ -168,27 +168,27 @@ function NavBar() {
       </Navbar.Content>
       <Navbar.Collapse disableAnimation>
       <Navbar.CollapseItem key="About" activeColor="warning">
-          <Link color="inherit" href="/projects">
+          <Link onClick={() => HandleSideMenu()} color="inherit" href="/projects">
             Projects
           </Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem key="About" activeColor="warning">
-          <Link color="inherit" href="/contact">
+          <Link onClick={() => HandleSideMenu()} color="inherit" href="/contact">
             Contact Me
           </Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem key="Projects" activeColor="warning">
-          <Link color="inherit" href="/stripe">
+          <Link onClick={() => HandleSideMenu()} color="inherit" href="/stripe">
             Buy me a coffee
           </Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem key="About" activeColor="warning">
-          <Link color="inherit" href="/about">
+          <Link onClick={() => HandleSideMenu()} color="inherit" href="/about">
             About
           </Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem key="About" activeColor="warning">
-          <Link color="inherit" href="/guestbook">
+          <Link onClick={() => HandleSideMenu()} color="inherit" href="/guestbook">
             Guests Book
           </Link>
         </Navbar.CollapseItem>
