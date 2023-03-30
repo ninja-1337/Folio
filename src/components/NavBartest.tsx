@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import Image from "next/image";
@@ -10,12 +12,15 @@ import DropDownLogin from "../components/DropDownLogin";
 import souvla from "/images/xsushi-sign.png";
 import Link from "next/link";
 import { Navbar, Text, Avatar, Dropdown, Input } from "@nextui-org/react";
-
 import { Spacer } from "@nextui-org/react";
-
+import { useState, useRef } from "react";
 function NavBar() {
   const { data: session, status } = useSession();
-
+  const navbarToggleRef = useRef();
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+  const HandleSideMenu = () => {
+    isSideMenuOpen && navbarToggleRef.current.click();
+  };
   const collapseItems = [
     "Profile",
     "Dashboard",
@@ -24,8 +29,12 @@ function NavBar() {
     "Help & Feedback",
   ];
   return (
-    <Navbar isBordered variant="sticky">
-      <Navbar.Toggle showIn="xs" />
+    <Navbar className="from-[#0b3bd6] to-[#f8a221]">
+      <Navbar.Toggle
+        ref={navbarToggleRef}
+        onChange={(isSelected: boolean) => setIsSideMenuOpen(isSelected)}
+        showIn="xs"
+      />
       <Navbar.Brand
         css={{
           "@xs": {
@@ -35,7 +44,7 @@ function NavBar() {
       >
         <Link href="/">
           <Text b color="inherit" hideIn="xs">
-            Folio
+            Verbal Agent
           </Text>
         </Link>
       </Navbar.Brand>
@@ -45,7 +54,7 @@ function NavBar() {
         hideIn="xs"
         variant="highlight"
       >
-        <Link color="secondary" href="/">
+       <Link color="secondary" href="/">
           Projects
         </Link>
         <Spacer />
@@ -56,6 +65,7 @@ function NavBar() {
         <Link href="/guestbook">Guestbook</Link>
         <Spacer />
         <Link href="/about">About</Link>
+        
       </Navbar.Content>
       <Navbar.Content
         css={{
@@ -80,50 +90,53 @@ function NavBar() {
                 </Dropdown.Trigger>
               )}
               {!session?.user?.image && (
-                <Dropdown.Button>Login</Dropdown.Button>
+                <Dropdown.Button>
+                  <p className="text-l">Login</p>
+                </Dropdown.Button>
               )}
             </>
           </Navbar.Item>
 
           {session?.user?.image && (
-            <Dropdown.Menu
-              aria-label="User menu actions"
-              color="warning"
-              onAction={(actionKey) => console.log({ actionKey })}
-            >
-              <Dropdown.Item key="profile" css={{ height: "$18" }}>
-                <Text b color="inherit" css={{ d: "flex" }}>
-                  Signed in as
-                </Text>
-                <Text b color="inherit" css={{ d: "flex" }}>
-                  {session.user.name}
-                </Text>
-              </Dropdown.Item>
+            
+        <Dropdown.Menu
+        aria-label="User menu actions"
+        color="warning"
+        onAction={(actionKey) => console.log({ actionKey })}
+      >
+        <Dropdown.Item key="profile" css={{ height: "$18" }}>
+          <Text b color="inherit" css={{ d: "flex" }}>
+            Signed in as
+          </Text>
+          <Text b color="inherit" css={{ d: "flex" }}>
+            {session.user.name}
+          </Text>
+        </Dropdown.Item>
 
-              <Dropdown.Item key="team_settings">
-                <Link href="/profile">Profile</Link>
-              </Dropdown.Item>
-              {/* <Dropdown.Item key="system">
-                {" "}
-                <Link href="/extprofile">External Profile</Link>
-              </Dropdown.Item> */}
+        <Dropdown.Item key="team_settings">
+          <Link href="/profile">Profile</Link>
+        </Dropdown.Item>
+        {/* <Dropdown.Item key="system">
+          {" "}
+          <Link href="/extprofile">External Profile</Link>
+        </Dropdown.Item> */}
 
-              <Dropdown.Item key="settings" withDivider>
-                <Link href="/settings">My Settings</Link>
-              </Dropdown.Item>
+        <Dropdown.Item key="settings" withDivider>
+          <Link href="/settings">My Settings</Link>
+        </Dropdown.Item>
 
-              <Dropdown.Item key="analytics" withDivider>
-                <Link href="/friends">My Friends</Link>
-              </Dropdown.Item>
+        <Dropdown.Item key="analytics" withDivider>
+          <Link href="/friends">My Friends</Link>
+        </Dropdown.Item>
 
-              <Dropdown.Item key="logout" withDivider color="error">
-                <div>
-                  {session?.user?.image && (
-                    <button onClick={() => signOut()}>Logout</button>
-                  )}
-                </div>
-              </Dropdown.Item>
-            </Dropdown.Menu>
+        <Dropdown.Item key="logout" withDivider color="error">
+          <div>
+            {session?.user?.image && (
+              <button onClick={() => signOut()}>Logout</button>
+            )}
+          </div>
+        </Dropdown.Item>
+      </Dropdown.Menu>
           )}
           {!session?.user?.image && (
             <Dropdown.Menu aria-label="User menu actions" color="warning">
@@ -154,7 +167,7 @@ function NavBar() {
         </Dropdown>
       </Navbar.Content>
       <Navbar.Collapse disableAnimation>
-        <Navbar.CollapseItem key="About" activeColor="warning">
+      <Navbar.CollapseItem key="About" activeColor="warning">
           <Link color="inherit" href="/projects">
             Projects
           </Link>
@@ -179,6 +192,7 @@ function NavBar() {
             Guests Book
           </Link>
         </Navbar.CollapseItem>
+        
       </Navbar.Collapse>
     </Navbar>
   );
