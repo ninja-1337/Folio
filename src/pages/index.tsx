@@ -25,6 +25,11 @@ const Home: NextPage = () => {
             description="A variety of agents for different tasks powered by GPT-3 "
             documentation="https://ninja1337.com/"
           />
+             <TechnologyCard
+            name="SunSpot"
+            description="A beach booking app--In Progress--"
+            documentation="https://sunspot-bay.vercel.app/"
+          />
           <TechnologyCard
             name="Pay Trends"
             description="Payment data for diferent job positions around the world"
@@ -47,11 +52,7 @@ const Home: NextPage = () => {
             documentation="https://busy-card-ninja-1337.vercel.app"
           />
 
-          <TechnologyCard
-            name="SunSpot"
-            description="A beach booking app--In Progress--"
-            documentation="https://sunspot-bay.vercel.app/"
-          />
+       
         </div>
       </main>
     </>
