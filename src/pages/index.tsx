@@ -46,12 +46,6 @@ const Home: NextPage = () => {
             documentation="https://souvlaswap-interface.vercel.app/"
           />
 
-          <TechnologyCard
-            name="Busy Card"
-            description="A business email signature generator "
-            documentation="https://busy-card-ninja-1337.vercel.app"
-          />
-
        
         </div>
       </main>
