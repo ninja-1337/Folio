@@ -154,7 +154,7 @@ function NavBar() {
             <Dropdown.Menu aria-label="User menu actions" >
               <Dropdown.Item key="profile" css={{ backgroundColor:"inherit", height: "$18" }}>
                 <button onClick={() => signIn("google")}>
-                  <Text className="p-1" b color="inherit">
+                  <Text className="p-1 hover:text-orange-300" b color="inherit">
                     Login with Google
                   </Text>
                   <SocialIcon
@@ -163,9 +163,9 @@ function NavBar() {
                   />
                 </button>
               </Dropdown.Item>
-              <Dropdown.Item key="profile" css={{backgroundColor:"inherit", height: "$18" }}>
+              <Dropdown.Item key="profile" css={{ backgroundColor:"inherit", height: "$18" }}>
                 <button onClick={() => signIn("discord")}>
-                  <Text className="p-1" b color="inherit">
+                  <Text className="p-1 hover:text-orange-300" b color="inherit">
                     Login with Discord
                   </Text>
                   <SocialIcon
