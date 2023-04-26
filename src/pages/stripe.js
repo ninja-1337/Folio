@@ -38,8 +38,8 @@ export default function App() {
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <div className="w-100 flex flex-col items-center justify-center">
-            <h2 className="text-lg font-bold text-gray-700">Stripe Payments</h2>
-            <p className="text-sm font-medium text-gray-600 text-gray-700">
+            <h2 className="text-lg font-bold text-gray-400">Stripe Payments</h2>
+            <p className="text-sm font-medium text-gray-500 text-gray-700">
               Buy me a coffee
             </p>
             <p className="rounded bg-red-100 text-sm font-medium text-gray-600 text-gray-700">

@@ -1,10 +1,10 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession   } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import Image from "next/image";
-
+import { useState, useEffect, useRef } from "react";
 import { format } from "date-fns";
 import { Navbar, Text, Avatar, Dropdown } from "@nextui-org/react";
 const Home: NextPage = () => {
