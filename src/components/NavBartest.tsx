@@ -9,7 +9,6 @@ import { Fragment } from "react";
 import MyDropdown from "../components/DropDown";
 import Loginwith from "../components/Login";
 import DropDownLogin from "../components/DropDownLogin";
-import souvla from "/images/xsushi-sign.png";
 import Link from "next/link";
 import { Navbar, Text, Avatar, Dropdown, Input } from "@nextui-org/react";
 import { Spacer } from "@nextui-org/react";
@@ -29,7 +28,10 @@ function NavBar() {
     "Help & Feedback",
   ];
   return (
-    <Navbar className="from-[#0b3bd6] to-[#f8a221]">
+    <Navbar  css={{
+      $$navbarBackgroundColor: "transparent",
+      $$navbarBlurBackgroundColor: "transparent"
+    }} className="">
       <Navbar.Toggle
         ref={navbarToggleRef}
         onChange={(isSelected: boolean) => setIsSideMenuOpen(isSelected)}
@@ -54,17 +56,33 @@ function NavBar() {
         hideIn="xs"
         variant="highlight"
       >
-       <Link color="secondary" href="/">
-          Projects
+       <Link color="inherit" href="/">
+       <Text b color="White" hideIn="xs">
+       Projects
+          </Text> 
         </Link>
         <Spacer />
-        <Link href="/contact">Contact Me</Link>
+        <Link href="/contact">  <Text b color="inherit" hideIn="xs">
+        Contact Me
+          </Text> </Link>
         <Spacer />
-        <Link href="/stripe">Buy Me A Coffee</Link>
+        <Link href="/stripe"> 
+        <Text b color="inherit" hideIn="xs">
+        Buy Me A Coffee
+          </Text>
+          </Link>
         <Spacer />
-        <Link href="/guestbook">Guestbook</Link>
+        <Link href="/guestbook">
+        <Text b color="inherit" hideIn="xs">
+        Guestbook
+          </Text> 
+          </Link>
         <Spacer />
-        <Link href="/about">About</Link>
+        <Link href="/about">
+        <Text b color="inherit" hideIn="xs">
+        About
+          </Text> 
+          </Link>
         
       </Navbar.Content>
       <Navbar.Content
@@ -166,8 +184,8 @@ function NavBar() {
           )}
         </Dropdown>
       </Navbar.Content>
-      <Navbar.Collapse disableAnimation>
-      <Navbar.CollapseItem key="About" activeColor="warning">
+      <Navbar.Collapse  color="white" disableAnimation>
+      <Navbar.CollapseItem key="About" color="white" activeColor="warning">
           <Link onClick={() => HandleSideMenu()} color="inherit" href="/">
             Projects
           </Link>
