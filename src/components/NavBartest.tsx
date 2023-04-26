@@ -20,13 +20,7 @@ function NavBar() {
   const HandleSideMenu = () => {
     isSideMenuOpen && navbarToggleRef.current.click();
   };
-  const collapseItems = [
-    "Profile",
-    "Dashboard",
-    "Settings",
-    "About",
-    "Help & Feedback",
-  ];
+
   return (
     <Navbar  css={{
       $$navbarBackgroundColor: "transparent",
@@ -80,7 +74,7 @@ function NavBar() {
         <Spacer />
         <Link href="/about">
         <Text b color="inherit" hideIn="xs">
-        About
+        About Me
           </Text> 
           </Link>
         
@@ -202,7 +196,7 @@ function NavBar() {
         </Navbar.CollapseItem>
         <Navbar.CollapseItem key="About" activeColor="warning">
           <Link onClick={() => HandleSideMenu()} color="inherit" href="/about">
-            About
+            About Me
           </Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem key="About" activeColor="warning">

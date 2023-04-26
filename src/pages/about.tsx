@@ -10,16 +10,12 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Portfolio</title>
-        <meta name="description" content="About" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className="container mx-auto flex min-h-fit flex-col items-center justify-center p-2">
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          <span className="text-orange-300">About</span>
-        </h1>
-        <p className="text-2xl text-blue-300">
+
+      <main className="container mx-auto flex min-h-fit flex-col items-center justify-center p-1">
+        <h2 className="text-3xl font-extrabold leading-normal text-gray-700 md:text-[3rem]">
+          <span className="text-orange-700">About</span>
+        </h2>
+        <p className="text-2xl text-blue-300 md:text-[19px]">
           Some of the things I am passionate about:
         </p>
 
