@@ -13,10 +13,17 @@ import Link from "next/link";
 import { Navbar, Text, Avatar, Dropdown, Input } from "@nextui-org/react";
 import { Spacer } from "@nextui-org/react";
 import { useState, useRef } from "react";
+import { useTheme as useNextTheme } from 'next-themes'
+import { Switch, useTheme } from '@nextui-org/react'
+import { SunIcon } from './sunicon';
+import { MoonIcon } from './moonicon';
 function NavBar() {
   const { data: session, status } = useSession();
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+  const { setTheme } = useNextTheme();
+  const { isDark, type } = useTheme();
+  
   const HandleSideMenu = () => {
     isSideMenuOpen && navbarToggleRef.current.click();
   };
@@ -26,6 +33,7 @@ function NavBar() {
       $$navbarBackgroundColor: "transparent",
       $$navbarBlurBackgroundColor: "transparent"
     }} className="">
+    
       <Navbar.Toggle
         ref={navbarToggleRef}
         onChange={(isSelected: boolean) => setIsSideMenuOpen(isSelected)}
@@ -87,6 +95,13 @@ function NavBar() {
           },
         }}
       >
+    
+        <Switch
+        checked={isDark}
+        onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+        iconOn={<MoonIcon filled />}
+          iconOff={<SunIcon filled />}
+      />
         <Dropdown placement="bottom-right">
           <Navbar.Item>
             <>
@@ -148,9 +163,14 @@ function NavBar() {
             )}
           </div>
         </Dropdown.Item>
+ 
+    
       </Dropdown.Menu>
+      
           )}
           {!session?.user?.image && (
+             <>
+                
             <Dropdown.Menu aria-label="User menu actions" >
               <Dropdown.Item key="profile" css={{ backgroundColor:"inherit", height: "$18" }}>
                 <button onClick={() => signIn("google")}>
@@ -175,8 +195,10 @@ function NavBar() {
                 </button>
               </Dropdown.Item>
             </Dropdown.Menu>
+           </>
           )}
         </Dropdown>
+       
       </Navbar.Content>
       <Navbar.Collapse  color="white" disableAnimation>
       <Navbar.CollapseItem key="About" color="white" activeColor="warning">
@@ -206,6 +228,7 @@ function NavBar() {
         </Navbar.CollapseItem>
         
       </Navbar.Collapse>
+      
     </Navbar>
   );
 }

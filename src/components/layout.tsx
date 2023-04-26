@@ -2,6 +2,11 @@
 import { createTheme } from "@nextui-org/react"
 import Navbar from "./NavBartest";
 import { ThemeProvider as NextThemesProvider  } from "next-themes";
+import { useTheme as useNextTheme } from 'next-themes'
+import { Switch, useTheme } from '@nextui-org/react'
+
+import { useState, createContext } from "react";
+
 interface Props {
   children: JSX.Element[] | JSX.Element;
 }
@@ -19,8 +24,9 @@ const darkTheme = createTheme({
   }
 })
 
+
 export default function Layout({ children }: Props) {
-  
+
   return (
     <>
             <NextThemesProvider
@@ -32,6 +38,7 @@ export default function Layout({ children }: Props) {
     }}
   >
       <Navbar />
+
       <main>{children}</main>
       </NextThemesProvider>
     </>
