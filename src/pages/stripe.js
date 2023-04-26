@@ -26,7 +26,7 @@ export default function App() {
   }, []);
 
   const appearance = {
-    theme: "stripe",
+    theme: "system",
   };
   const options = {
     clientSecret,
