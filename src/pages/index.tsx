@@ -16,8 +16,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container mx-auto flex min-h-fit flex-col items-center justify-center p-2">
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          <span className="text-orange-300">Portfolio</span>
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[4rem]">
+          <span className="text-orange-700">Portfolio</span>
         </h1>
         <div className="mt-3 grid gap-3 pt-3 text-center md:grid-cols-3 lg:w-2/3">
           <TechnologyCard
