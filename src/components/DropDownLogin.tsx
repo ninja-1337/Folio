@@ -25,8 +25,8 @@ function DropDownLogin() {
           {!session?.user?.image && <>Login</>}
         </Menu.Button>
 
-        <Menu.Items className="mt- absolute right-0 w-32 origin-center justify-center divide-gray-100  rounded-md bg-white align-middle shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <Menu.Item>
+        <Menu.Items  className="mt- absolute right-0 w-32 origin-center justify-center divide-gray-100  rounded-md bg-white align-middle shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Item as="section">
             {({ active }) => (
               <>
                 {session ? (
@@ -40,33 +40,33 @@ function DropDownLogin() {
                     <div
                       className={`${
                         active &&
-                        "justify-center rounded bg-amber-200 align-middle"
+                        "justify-center rounded  align-middle"
                       }`}
                     >
-                      <Menu.Item>
+                      
                         <button onClick={() => signIn("discord")}>
                           <SocialIcon
                             network="discord"
                             style={{ height: 25, width: 25 }}
                           />
                         </button>
-                      </Menu.Item>
+                  
                     </div>
 
                     <div
                       className={`${
                         active &&
-                        "justify-center rounded bg-amber-200 align-middle"
+                        "justify-center rounded  align-middle"
                       }`}
                     >
-                      <Menu.Item>
+                     
                         <button onClick={() => signIn("google")}>
                           <SocialIcon
                             network="google"
                             style={{ height: 25, width: 25 }}
                           />
                         </button>
-                      </Menu.Item>
+                    
                     </div>
                   </>
                 )}

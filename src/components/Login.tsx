@@ -3,8 +3,6 @@ import Image from "next/image";
 import { SocialIcon } from "react-social-icons";
 import { signIn, signOut, useSession } from "next-auth/react";
 
-import MyDropdown from "../components/DropDown";
-
 function Loginwith() {
   const { data: session, status } = useSession();
   return (
@@ -27,15 +25,15 @@ function Loginwith() {
         </div>
       ) : (
         <>
-          <div>
-            <button onClick={() => signIn("discord")}>
-              <SocialIcon network="discord" style={{ height: 25, width: 25 }} />
-            </button>
+         
+            <span  style={{  backgroundColor: 'none' }} onClick={() => signIn("discord")}>
+              <SocialIcon  network="discord" style={{ height: 25, width: 25 }} />
+            </span>
 
-            <button onClick={() => signIn("google")}>
+            <button onClick={() => signIn("google")} >
               <SocialIcon network="google" style={{ height: 25, width: 25 }} />
             </button>
-          </div>
+       
         </>
       )}
     </>

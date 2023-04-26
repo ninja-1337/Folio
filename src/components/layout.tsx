@@ -1,5 +1,5 @@
 // components/layout.js
-import { createTheme, NextUIProvider } from "@nextui-org/react"
+import { createTheme } from "@nextui-org/react"
 import Navbar from "./NavBartest";
 import { ThemeProvider as NextThemesProvider  } from "next-themes";
 interface Props {
@@ -8,14 +8,14 @@ interface Props {
 const lightTheme = createTheme({
   type: 'light',
   theme: {
-    colors: {}, // optional
+    colors: { primaryLightHover: '$green300'}, // optional
   }
 })
 
 const darkTheme = createTheme({
   type: 'dark',
   theme: {
-    colors: {}, // optional
+    colors: { primaryLightHover: 'green', primaryLightActive: 'green'}, // optional
   }
 })
 
