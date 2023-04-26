@@ -165,7 +165,7 @@ function NavBar() {
               </Dropdown.Item>
               <Dropdown.Item key="profile" css={{backgroundColor:"inherit", height: "$18" }}>
                 <button onClick={() => signIn("discord")}>
-                  <Text className="p-1" b>
+                  <Text className="p-1" b color="inherit">
                     Login with Discord
                   </Text>
                   <SocialIcon
