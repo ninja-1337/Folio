@@ -4,7 +4,7 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-
+import { useTheme as useNextTheme } from 'next-themes'
 export default function CheckoutForm() {
   const stripe = useStripe();
   const elements = useElements();
@@ -75,6 +75,8 @@ export default function CheckoutForm() {
 
     setIsLoading(false);
   };
+  const {setTheme, theme}   = useNextTheme();
+ 
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
