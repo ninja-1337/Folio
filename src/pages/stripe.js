@@ -27,12 +27,12 @@ export default function App() {
   const {setTheme, theme}   = useNextTheme();
   let tempTheme="dark"
  if(theme=="dark"){
-   tempTheme="light"
+   tempTheme="night"
  }else{
-   tempTheme="dark"
+   tempTheme="light"
  }
   const appearance = {
-    theme: tempTheme,
+    theme: {tempTheme},
   };
   const options = {
     clientSecret,
