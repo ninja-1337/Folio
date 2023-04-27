@@ -56,7 +56,7 @@ const GameOfLifePage = () => {
       // Update the grid with the next generation of cells
     }
   }, [grid]);
-let color={
+const color={
   black:"#161716",
   white:"white"
 }
