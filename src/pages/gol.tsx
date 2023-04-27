@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { useTheme as useNextTheme } from 'next-themes'
 
-const GameOfLifePage = () => {
+function GameOfLifePage (){
   // Initialize the game state with a random grid of cells
   const count = useRef(0);
   const [grid, setGrid] = useState(() => {
@@ -14,10 +14,10 @@ const GameOfLifePage = () => {
     }
     return rows;
   });
+  const {setTheme,theme}   = useNextTheme();
+  const [themestate] = useState(theme);
 
-  const {setTheme, theme}   = useNextTheme();
-  const {themestate}= useState(theme)
- 
+
 
   // This effect will be called on every update to the component
   useEffect(() => {
