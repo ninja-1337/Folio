@@ -71,7 +71,7 @@ if(theme=="dark"){
   return (
     <>
       <p className="text-center text-lg text-blue-700">
-        150 iterations of Conway&apos;s Game of Life. It is a <a target="_blank" className="bold text-blue-500" href="https://en.wikipedia.org/wiki/Cellular_automaton">cellular automaton </a>
+        150 iterations of Conway&apos;s Game of Life. It is a <a target="_blank" rel="noreferrer" className="bold text-blue-500" href="https://en.wikipedia.org/wiki/Cellular_automaton">cellular automaton </a>
         invented by mathematician John Horton Conway in 1970. It is a
         zero-player game, meaning that its evolution is determined by its
         initial state, requiring no further input. One interacts with the Game
