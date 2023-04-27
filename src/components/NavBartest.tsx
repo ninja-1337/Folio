@@ -30,9 +30,8 @@ function NavBar() {
   const { data: session, status } = useSession();
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-  const {setTheme}   = useNextTheme();
+  const {setTheme,theme}   = useNextTheme();
  
-  const { isDark } = useTheme();
 
 
 
@@ -109,7 +108,7 @@ function NavBar() {
       >
     
         <Switch
-        checked={isDark ? "dark": "light"}
+        checked={theme=="dark" ? true: false}
         onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
 
         iconOn={<MoonIcon filled />}
