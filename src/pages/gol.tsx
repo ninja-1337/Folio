@@ -15,7 +15,7 @@ function GameOfLifePage (){
     return rows;
   });
   const {setTheme,theme}   = useNextTheme();
-  const [themestate] = useState(theme);
+  const [themestate,setThemeState] = useState(theme);
 
 
 
@@ -104,6 +104,6 @@ if(themestate=="dark"){
       </div>
     </>
   );
-};
+}
 
 export default GameOfLifePage;
