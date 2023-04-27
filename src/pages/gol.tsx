@@ -16,6 +16,7 @@ const GameOfLifePage = () => {
   });
 
   const {setTheme, theme}   = useNextTheme();
+  const {themestate}= useState(theme)
  
 
   // This effect will be called on every update to the component
@@ -60,7 +61,7 @@ const color={
   black:"#161716",
   white:"white"
 }
-if(theme=="dark"){
+if(themestate=="dark"){
   color.black="white"
   color.white="#161716"
 }else{
