@@ -37,6 +37,16 @@ const Home: NextPage = () => {
             Also following almost every ethereum developer out there on Github"
             documentation=""
           />
+             
+        </div>
+
+        <div className="mt-3 grid gap-2 pt-3 text-center w-4/6 md:grid-cols-1 ">
+     
+              <TechnologyCard
+            name="Building side projects"
+            description="Working on silly side projects is how I let loose and embrace my playful side, designing quirky inventions or implementing something like Conway's Game Of life serve as a refreshing break from the seriousness of everyday life. Explore it by clicking this card"
+            documentation="/gol"
+          />
         </div>
       </main>
     </>

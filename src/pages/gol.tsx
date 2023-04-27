@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-key */
-
+import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
+import { useTheme as useNextTheme } from 'next-themes'
 
 const GameOfLifePage = () => {
   // Initialize the game state with a random grid of cells
@@ -13,6 +14,9 @@ const GameOfLifePage = () => {
     }
     return rows;
   });
+
+  const {setTheme, theme}   = useNextTheme();
+ 
 
   // This effect will be called on every update to the component
   useEffect(() => {
@@ -52,12 +56,22 @@ const GameOfLifePage = () => {
       // Update the grid with the next generation of cells
     }
   }, [grid]);
-
+let color={
+  black:"#161716",
+  white:"white"
+}
+if(theme=="dark"){
+  color.black="white"
+  color.white="#161716"
+}else{
+  color.black="#161716"
+  color.white="white"
+}
   // Render the grid as a table
   return (
     <>
       <p className="text-center text-lg text-blue-700">
-        150 iterations of Conway&apos;s Game of Life is a cellular automaton
+        150 iterations of Conway&apos;s Game of Life. It is a <a target="_blank" className="bold text-blue-500" href="https://en.wikipedia.org/wiki/Cellular_automaton">cellular automaton </a>
         invented by mathematician John Horton Conway in 1970. It is a
         zero-player game, meaning that its evolution is determined by its
         initial state, requiring no further input. One interacts with the Game
@@ -74,7 +88,7 @@ const GameOfLifePage = () => {
                   style={{
                     width: 20,
                     height: 20,
-                    backgroundColor: cell ? "black" : "white",
+                    backgroundColor: cell ? color.black : color.white,
                   }}
                 />
               ))}
