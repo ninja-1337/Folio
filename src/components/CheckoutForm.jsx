@@ -75,14 +75,12 @@ export default function CheckoutForm() {
 
     setIsLoading(false);
   };
-  const {setTheme, theme}   = useNextTheme();
- 
 
   return (
     <form id="payment-form" onSubmit={handleSubmit}>
       <PaymentElement id="payment-element" />
       <button disabled={isLoading || !stripe || !elements} id="submit">
-        <span classname="" id="button-text">
+        <span classname="bg-orange-300" id="button-text">
           {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
         </span>
       </button>
