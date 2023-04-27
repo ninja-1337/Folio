@@ -3,7 +3,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
-
+import { useTheme as useNextTheme } from 'next-themes'
 import { trpc } from "../utils/trpc";
 import Image from "next/image";
 import { format } from "date-fns";
@@ -17,6 +17,8 @@ const Home: NextPage = () => {
       // refetches posts after a post is added
     },
   });
+  const {setTheme, theme}   = useNextTheme();
+ 
 
   return (
     <>
@@ -32,7 +34,7 @@ const Home: NextPage = () => {
         {!session && (
           // eslint-disable-next-line @next/next/no-html-link-for-pages
           <>
-            <div className="rounded bg-orange-400 p-1" color="inherit">
+            <div className={theme=="dark" ? "text-orange-700" : "text-orange-400"} color="inherit">
               Please login to send me a message
             </div>
             <div>

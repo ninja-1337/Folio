@@ -2,7 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
-
+import { useTheme as useNextTheme } from 'next-themes'
 import { trpc } from "../utils/trpc";
 import { format } from "date-fns";
 import Image from "next/image";
@@ -15,8 +15,10 @@ const Home: NextPage = () => {
       // refetches posts after a post is added
     },
   });
-
+  const {setTheme, theme}   = useNextTheme();
+ 
   const { data: session, status } = useSession();
+
   return (
     <>
       <Head>
@@ -25,8 +27,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container mx-auto flex min-h-fit flex-col items-center justify-center p-2">
-        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[5rem]">
-          <span className="text-orange-300">GuestBook</span>
+        <h1 className="text-5xl font-extrabold leading-normal text-gray-700 md:text-[3rem]">
+          <span className={theme=="dark" ? "text-orange-700" : "text-orange-400"}>GuestBook</span>
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
           Leave a comment below. It could be anything – appreciation,

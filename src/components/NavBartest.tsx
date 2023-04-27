@@ -17,13 +17,25 @@ import { useTheme as useNextTheme } from 'next-themes'
 import { Switch, useTheme } from '@nextui-org/react'
 import { SunIcon } from './sunicon';
 import { MoonIcon } from './moonicon';
+import { inferAsyncReturnType } from "@trpc/server";
+
+
+export interface ChildProps {
+  setTheme: inferAsyncReturnType;
+  isDark: boolean | undefined;
+
+}
+
 function NavBar() {
   const { data: session, status } = useSession();
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-  const { setTheme } = useNextTheme();
-  const { isDark, type } = useTheme();
-  
+  const {setTheme}   = useNextTheme();
+ 
+  const { isDark } = useTheme();
+
+
+
   const HandleSideMenu = () => {
     isSideMenuOpen && navbarToggleRef.current.click();
   };
@@ -97,8 +109,9 @@ function NavBar() {
       >
     
         <Switch
-        checked={!isDark ? "dark": "light"}
+        checked={isDark ? "dark": "light"}
         onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+
         iconOn={<MoonIcon filled />}
           iconOff={<SunIcon filled />}
       />

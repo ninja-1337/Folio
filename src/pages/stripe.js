@@ -1,7 +1,7 @@
 import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-
+import { useTheme as useNextTheme } from 'next-themes'
 import CheckoutForm from "../components/CheckoutForm";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
@@ -24,9 +24,15 @@ export default function App() {
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, []);
-
+  const {setTheme, theme}   = useNextTheme();
+  let tempTheme="dark"
+ if(theme=="dark"){
+   tempTheme="dark"
+ }else{
+   tempTheme="light"
+ }
   const appearance = {
-    theme: "night",
+    theme: tempTheme,
   };
   const options = {
     clientSecret,
