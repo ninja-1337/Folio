@@ -1,6 +1,6 @@
 // components/layout.js
 import { createTheme } from "@nextui-org/react"
-import Navbar, { ChildProps } from "./NavBartest";
+import Navbar, { ChildProps } from "./NavBar";
 import { ThemeProvider as NextThemesProvider  } from "next-themes";
 import { useTheme as useNextTheme } from 'next-themes'
 import { Switch, useTheme } from '@nextui-org/react'

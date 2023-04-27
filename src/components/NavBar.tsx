@@ -6,9 +6,9 @@ import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Menu } from "@headlessui/react";
 import { Fragment } from "react";
-import MyDropdown from "../components/DropDown";
-import Loginwith from "../components/Login";
-import DropDownLogin from "../components/DropDownLogin";
+import MyDropdown from "./DropDown";
+import Loginwith from "./Login";
+import DropDownLogin from "./DropDownLogin";
 import Link from "next/link";
 import { Navbar, Text, Avatar, Dropdown, Input } from "@nextui-org/react";
 import { Spacer } from "@nextui-org/react";
@@ -31,6 +31,7 @@ function NavBar() {
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const {setTheme,theme}   = useNextTheme();
+  const {themestate}= useState(theme)
  
 
 
@@ -108,7 +109,7 @@ function NavBar() {
       >
     
         <Switch
-        checked={theme=="dark" ? true: false}
+        checked={themestate=="dark" ? false: true}
         onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
 
         iconOn={<MoonIcon filled />}
