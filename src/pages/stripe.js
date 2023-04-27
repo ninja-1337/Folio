@@ -27,9 +27,9 @@ export default function App() {
   const {setTheme, theme}   = useNextTheme();
   let tempTheme="dark"
  if(theme=="dark"){
-   tempTheme="dark"
- }else{
    tempTheme="light"
+ }else{
+   tempTheme="dark"
  }
   const appearance = {
     theme: tempTheme,
