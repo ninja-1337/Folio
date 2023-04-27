@@ -2,19 +2,23 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
-
+import { Switch, useTheme } from '@nextui-org/react'
 import { trpc } from "../utils/trpc";
+
 import TechnologyCard from "../components/TechnologyCard";
 const Home: NextPage = () => {
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
+  const { isDark, type } = useTheme();
+    const { theme } = useTheme();
 
   return (
     <>
 
       <main className="container mx-auto flex min-h-fit flex-col items-center justify-center p-1">
         <h2 className="text-3xl font-extrabold leading-normal text-gray-700 md:text-[3rem]">
-          <span className="text-orange-700">About</span>
+          <span className={isDark ? "text-blue-700" : "text-orange-700"}>About</span>
         </h2>
+       
         <p className="text-2xl text-blue-300 md:text-[19px]">
           Some of the things I am passionate about:
         </p>

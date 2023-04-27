@@ -6,37 +6,41 @@ import { useTheme as useNextTheme } from 'next-themes'
 import { Switch, useTheme } from '@nextui-org/react'
 
 import { useState, createContext } from "react";
-
+import { SunIcon } from './sunicon';
+import { MoonIcon } from './moonicon';
 interface Props {
   children: JSX.Element[] | JSX.Element;
 }
 const lightTheme = createTheme({
   type: 'light',
   theme: {
-    colors: { primaryLightHover: '$green300'}, // optional
+    colors: { }, // optional
   }
 })
 
 const darkTheme = createTheme({
   type: 'dark',
   theme: {
-    colors: { primaryLightHover: 'green', primaryLightActive: 'green'}, // optional
+    colors: { }, // optional
   }
 })
 
 
 export default function Layout({ children }: Props) {
-
+  const { setTheme } = useNextTheme();
+  const { isDark, type } = useTheme();
+  
   return (
     <>
             <NextThemesProvider
-    defaultTheme="system"
+    defaultTheme="dark"
     attribute="class"
     value={{
       light: lightTheme.className,
       dark: darkTheme.className
     }}
   >
+    
       <Navbar />
 
       <main>{children}</main>

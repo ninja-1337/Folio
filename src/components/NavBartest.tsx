@@ -59,7 +59,7 @@ function NavBar() {
         variant="highlight"
       >
        <Link color="inherit" href="/">
-       <Text b color="White" hideIn="xs">
+       <Text b color="inherit" hideIn="xs">
        Projects
           </Text> 
         </Link>
@@ -97,7 +97,7 @@ function NavBar() {
       >
     
         <Switch
-        checked={isDark}
+        checked={!isDark ? "dark": "light"}
         onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
         iconOn={<MoonIcon filled />}
           iconOff={<SunIcon filled />}
