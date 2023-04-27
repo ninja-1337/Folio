@@ -15,7 +15,6 @@ function GameOfLifePage (){
     return rows;
   });
   const {setTheme,theme}   = useNextTheme();
-  const [themestate,setThemeState] = useState(theme);
 
 
 
@@ -61,7 +60,7 @@ const color={
   black:"#161716",
   white:"white"
 }
-if(themestate=="dark"){
+if(theme=="dark"){
   color.black="white"
   color.white="#161716"
 }else{

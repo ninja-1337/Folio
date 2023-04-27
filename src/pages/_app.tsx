@@ -35,7 +35,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
        {/* <ThemeProvider enableSystem={true} attribute="class"> */}
        <>
             <NextThemesProvider
-    defaultTheme="system"
+    defaultTheme="dark"
     attribute="class"
     value={{
       light: lightTheme.className,
