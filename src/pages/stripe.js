@@ -32,7 +32,7 @@ export default function App() {
    tempTheme="light"
  }
   const appearance = {
-    theme: {tempTheme},
+    theme: tempTheme,
   };
   const options = {
     clientSecret,
@@ -44,12 +44,12 @@ export default function App() {
       {clientSecret && (
         <Elements options={options} stripe={stripePromise}>
           <div className="w-100 flex flex-col items-center justify-center">
-            <h2 className="text-lg font-bold text-gray-400">Stripe Payments</h2>
+            <h2 className={theme=="dark" ? "text-white-200 text-lg font-bold" : "text-grey-600 text-lg font-bold"} >Stripe Payments</h2>
             <p className={theme=="dark" ? "text-white-200 text-sm font-medium" : "text-grey-600 text-sm font-medium"}>
               Buy me a coffee
             </p>
             <p className={theme=="dark" ? "text-white-200 text-sm font-medium rounded" : "text-grey-600 text-sm font-medium rounded"}>
-              Test card 4242 4242
+              Test card 4242 4242 4242 4242
             </p>
           </div>
           <CheckoutForm />
