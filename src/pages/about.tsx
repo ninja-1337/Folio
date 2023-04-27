@@ -15,7 +15,6 @@ const Home: NextPage = () => {
   return (
     <>
 
-<>It is {theme}</>
       <main className="container mx-auto flex min-h-fit flex-col items-center justify-center p-1">
         <h2 className="text-3xl font-extrabold leading-normal text-gray-700 md:text-[3rem]">
           <span className={theme=="dark" ? "text-orange-700" : "text-orange-400"}>About</span>
