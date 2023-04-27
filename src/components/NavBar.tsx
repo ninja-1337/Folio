@@ -4,17 +4,13 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { Menu } from "@headlessui/react";
-import { Fragment } from "react";
-import MyDropdown from "./DropDown";
-import Loginwith from "./Login";
-import DropDownLogin from "./DropDownLogin";
+
 import Link from "next/link";
 import { Navbar, Text, Avatar, Dropdown, Input } from "@nextui-org/react";
 import { Spacer } from "@nextui-org/react";
 import { useState, useRef } from "react";
 import { useTheme as useNextTheme } from 'next-themes'
-import { Switch, useTheme } from '@nextui-org/react'
+import { Switch } from '@nextui-org/react'
 import { SunIcon } from './sunicon';
 import { MoonIcon } from './moonicon';
 import { inferAsyncReturnType } from "@trpc/server";
@@ -30,8 +26,8 @@ function NavBar() {
   const { data: session, status } = useSession();
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-  const {setTheme,theme}   = useNextTheme();
-  const {themestate}= useState(theme)
+  const {setTheme,theme}   = useNextTheme("dark");
+
  
 
 
