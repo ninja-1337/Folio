@@ -28,13 +28,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col items-center justify-center">
-        <p className="text-2xl text-blue-300">
-          Your messages are private and are only shown to me
+        <p className="text-xl text-blue-300">
+          Messages are private
         </p>
         {!session && (
           // eslint-disable-next-line @next/next/no-html-link-for-pages
           <>
-            <div className={theme=="dark" ? "text-orange-700" : "text-orange-400"} color="inherit">
+            <div className={theme=="dark" ? "text-orange-700" : "text-orange-600"} color="inherit">
               Please login to send me a message
             </div>
             <div>

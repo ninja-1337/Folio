@@ -38,8 +38,8 @@ const Home: NextPage = () => {
         {!session && (
           // eslint-disable-next-line @next/next/no-html-link-for-pages
           <>
-            <div className="rounded bg-orange-400 p-1" color="inherit">
-              Login to post a message
+            <div className={theme=="dark" ? "rounded p-1 text-orange-700" : "rounded p-1 text-orange-600"} color="inherit">
+              Please login to post a message
             </div>
             <div>
               <button onClick={() => signIn("google")}>
