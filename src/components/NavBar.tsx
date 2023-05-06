@@ -162,7 +162,7 @@ function NavBar() {
                 </Dropdown.Trigger>
               )}
               {!session?.user?.image && (
-                <Dropdown.Button>
+                <Dropdown.Button disableAnimation>
                   <p className="text-l">Login</p>
                 </Dropdown.Button>
               )}
