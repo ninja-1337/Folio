@@ -117,9 +117,9 @@ function NavBar() {
           },
         }}
       >
-    
+    {console.log("ThemeState is: "+(themestate=="dark" ? true: false))}
         <Switch
-        checked={themestate=="dark" ? true: false}
+        checked={(themestate=="dark" ? true: false)}
         onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
 
         iconOn={<MoonIcon filled />}
