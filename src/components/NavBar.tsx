@@ -216,7 +216,7 @@ function NavBar() {
           {!session?.user?.image && (
              <>
                 
-            <Dropdown.Menu aria-label="User menu actions" >
+            <Dropdown.Menu disableAnimation aria-label="User menu actions" >
               <Dropdown.Item key="profile" css={{ backgroundColor:"inherit", height: "$18" }}>
                 <button onClick={() => signIn("google")}>
                   <Text className="p-1 hover:text-orange-300" b color="inherit">
