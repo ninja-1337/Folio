@@ -41,7 +41,7 @@ function NavBar() {
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
-  const {themestate,setTheme}   = useTheme();
+  const [themestate,setTheme]   = useTheme();
  
   const [switchstate, setSwitchState] = useState(themestate ? true:false );
 
