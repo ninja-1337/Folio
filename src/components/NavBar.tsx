@@ -55,7 +55,7 @@ function NavBar() {
   useEffect(()=>{
 setSwitchState(themestate ? true:false)
 
-  },[])
+  },[themestate])
 
   return (
     <Navbar  css={{
