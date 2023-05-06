@@ -44,10 +44,10 @@ function NavBar() {
   useEffect(() => {
     setMounted(true);
   }, []);
-  useEffect(()=>{
-    setSwitchState(themestate ? false:true)
-    setTheme(switchstate==true ?"light":"dark")
-      },[])
+  // useEffect(()=>{
+  //   setSwitchState(themestate ? false:true)
+  //   setTheme(switchstate==true ?"light":"dark")
+  //     },[])
   if (!mounted) return null;
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
