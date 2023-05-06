@@ -41,11 +41,11 @@ function NavBar() {
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
-  const {setTheme,themestate}   = useNextTheme(getPreferredColorScheme());
+  const {themestate,setTheme}   = useTheme();
  
   const [switchstate, setSwitchState] = useState(themestate ? true:false );
 
-
+  const currentTheme= theme === 'system' ? systemTheme : theme;
 
 
   const HandleSideMenu = () => {
