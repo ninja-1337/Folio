@@ -43,7 +43,7 @@ function NavBar() {
 
   const {setTheme,themestate}   = useNextTheme(getPreferredColorScheme());
   if(!(typeof window === 'undefined')){
-    const thm= themestate === undefined ? systemTheme : themestate;
+    const thm=(typeof themestate === 'undefined') ? getPreferredColorScheme() : themestate;
     console.log("THM is:" +thm)
   }
  
