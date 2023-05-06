@@ -117,7 +117,7 @@ function NavBar() {
           },
         }}
       >
-    {console.log("ThemeState is: "+(themestate=="dark" ? true: false))}
+    {console.log("ThemeState is: "+(themestate=="dark" ? true: false)+" and :"+themestate)}
         <Switch
         checked={(themestate=="dark" ? true: false)}
         onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
