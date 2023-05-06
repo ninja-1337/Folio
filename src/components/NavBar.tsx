@@ -40,19 +40,22 @@ function NavBar() {
   const { data: session, status } = useSession();
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  const {setTheme,themestate}   = useNextTheme(getPreferredColorScheme());
+  const {setTheme,themestate}   = useTheme();
 
  
   const [switchstate, setSwitchState] = useState(themestate ? true:false );
 
-
+if(!mounted)return null;
+const currentTheme= themestate === 'system' ? themestate : systemTheme;
 
   const HandleSideMenu = () => {
     isSideMenuOpen && navbarToggleRef.current.click();
   };
 
   useEffect(()=>{
+    setMounted(true)
 setSwitchState(themestate ? false:true)
 setTheme(switchstate==true ?"light":"dark")
   },[])
