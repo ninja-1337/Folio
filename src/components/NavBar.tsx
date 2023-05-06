@@ -120,17 +120,7 @@ function NavBar() {
           },
         }}
       >
-   
-        <Switch
-        checked={switchstate}
-        onChange={(e) => {setTheme(e.target.checked ? 'dark' : 'light')
-            setSwitchState(e.target.checked)
-      }}
-
-        iconOn={<MoonIcon filled />}
-          iconOff={<SunIcon filled />}
-      />
-
+ 
 
 {currentTheme === 'dark' ? (
               <Switch
