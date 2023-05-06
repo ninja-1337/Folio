@@ -134,7 +134,7 @@ function NavBar() {
 
 {currentTheme === 'dark' ? (
               <Switch
-              checked={switchstate}
+              checked={true}
               onChange={(e) => {setTheme( 'light')
                   setSwitchState(e.target.checked)
             }}
@@ -144,7 +144,7 @@ function NavBar() {
             />
           ) : (
             <Switch
-            checked={switchstate}
+            checked={false}
             onChange={(e) => {setTheme('dark')
                 setSwitchState(e.target.checked)
           }}
