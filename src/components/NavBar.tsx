@@ -22,6 +22,7 @@ export interface ChildProps {
 
 }
 function getPreferredColorScheme() {
+  console.log("Function typeof window !== undefined: " + typeof window !== 'undefined')
   if (typeof window !== 'undefined') {
     if (window.matchMedia) {
       if(window.matchMedia('(prefers-color-scheme: dark)').matches){
