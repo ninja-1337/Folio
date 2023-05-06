@@ -29,7 +29,7 @@ function NavBar() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const {setTheme,themestate}   = useNextTheme();
+  const {themestate}   = useNextTheme();
 
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
