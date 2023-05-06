@@ -40,8 +40,8 @@ function NavBar() {
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
-  const {setTheme,theme}   = useNextTheme(getPreferredColorScheme());
-  const {themestate}= useState(theme)
+  const {setTheme,themestate}   = useNextTheme(getPreferredColorScheme());
+ 
  
 
 
