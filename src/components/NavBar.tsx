@@ -54,7 +54,7 @@ function NavBar() {
 
   useEffect(()=>{
 setSwitchState(themestate ? false:true)
-setTheme(switchstate==true ?"dark":"light")
+setTheme(switchstate==true ?"light":"dark")
   },[])
 
   return (
