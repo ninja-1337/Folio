@@ -32,7 +32,7 @@ function NavBar() {
   const {themestate}   = useNextTheme();
 
   const { systemTheme, theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+
   const [switchstate, setSwitchState] = useState(themestate ? true:false );
 
 
