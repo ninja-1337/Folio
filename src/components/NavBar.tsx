@@ -21,20 +21,7 @@ export interface ChildProps {
   isDark: boolean | undefined;
 
 }
-function getPreferredColorScheme() {
-  console.log("Function typeof window !== undefined: " + typeof window !== 'undefined')
-  if (typeof window !== 'undefined') {
-    if (window.matchMedia) {
-      if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-        return 'dark';
-      } else {
-        return 'light';
-      }
-    }
-    return 'light';
-  }
-return "dark"
-}
+
 
 function NavBar() {
   const { data: session, status } = useSession();
@@ -42,7 +29,7 @@ function NavBar() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  const {setTheme,themestate}   = useNextTheme(getPreferredColorScheme());
+  const {setTheme,themestate}   = useNextTheme();
 
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -57,14 +44,14 @@ function NavBar() {
   useEffect(() => {
     setMounted(true);
   }, []);
-
+  useEffect(()=>{
+    setSwitchState(themestate ? false:true)
+    setTheme(switchstate==true ?"light":"dark")
+      },[])
   if (!mounted) return null;
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
-  useEffect(()=>{
-setSwitchState(themestate ? false:true)
-setTheme(switchstate==true ?"light":"dark")
-  },[])
+
 
   return (
     <Navbar  css={{
