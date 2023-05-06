@@ -43,7 +43,8 @@ function NavBar() {
 
   const {setTheme,themestate}   = useNextTheme(getPreferredColorScheme());
  
- 
+  const [switchstate, setSwitchState] = useState(themestate ? true:false );
+
 
 
 
@@ -120,8 +121,10 @@ function NavBar() {
       >
     {console.log("ThemeState is: "+(themestate=="dark" ? true: false)+" and :"+themestate)}
         <Switch
-        checked={(themestate=="dark" ? true: false)}
-        onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+        checked={switchstate}
+        onChange={(e) => {setTheme(e.target.checked ? 'dark' : 'light')
+            setSwitchState(e.target.checked)
+      }}
 
         iconOn={<MoonIcon filled />}
           iconOff={<SunIcon filled />}
