@@ -42,8 +42,11 @@ function NavBar() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
   const {setTheme,themestate}   = useNextTheme(getPreferredColorScheme());
-  const thm= themestate === undefined ? systemTheme : themestate;
-console.log("THM is:" +thm)
+  if(mounted){
+    const thm= themestate === undefined ? systemTheme : themestate;
+    console.log("THM is:" +thm)
+  }
+ 
   const [switchstate, setSwitchState] = useState(themestate ? true:false );
 
 
