@@ -53,7 +53,7 @@ function NavBar() {
   };
 
   useEffect(()=>{
-setSwitchState(themestate ? true:false)
+setSwitchState(themestate ? false:true)
 setTheme(switchstate==true ?"dark":"light")
   },[])
 
