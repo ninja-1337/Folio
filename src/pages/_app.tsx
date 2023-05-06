@@ -23,7 +23,19 @@ const darkTheme = createTheme({
     colors: { }, // optional
   }
 })
-
+function getPreferredColorScheme() {
+  if (typeof window !== 'undefined') {
+    if (window.matchMedia) {
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        return 'dark';
+      } else {
+        return 'light';
+      }
+    }
+    return 'light';
+  }
+return "dark"
+}
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
   pageProps: { session, ...pageProps },
@@ -35,7 +47,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
        <>
             <NextThemesProvider
             enableSystem={true}
-    defaultTheme="system"
+    defaultTheme={getPreferredColorScheme()}
     attribute="class"
     value={{
       light: lightTheme.className,
