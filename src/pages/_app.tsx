@@ -46,7 +46,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
        {/* <ThemeProvider enableSystem={true} attribute="class"> */}
        <>
             <NextThemesProvider
-            enableSystem={true}
+            // enableSystem={true}
     defaultTheme={getPreferredColorScheme()}
     attribute="class"
     value={{
