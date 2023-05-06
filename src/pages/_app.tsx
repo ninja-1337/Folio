@@ -6,7 +6,6 @@ import { trpc } from "../utils/trpc";
 import Layout from "../components/layout";
 import { createTheme, NextUIProvider } from "@nextui-org/react"
 import "../styles/globals.css";
-
 import { useTheme as useNextTheme } from 'next-themes'
 import { Switch, useTheme } from '@nextui-org/react'
 

@@ -21,12 +21,23 @@ export interface ChildProps {
   isDark: boolean | undefined;
 
 }
+function getPreferredColorScheme() {
+  if (window.matchMedia) {
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      return 'dark';
+    } else {
+      return 'light';
+    }
+  }
+  return 'light';
+}
 
 function NavBar() {
   const { data: session, status } = useSession();
   const navbarToggleRef = useRef();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
-  const {setTheme,theme}   = useNextTheme("dark");
+
+  const {setTheme,theme}   = useNextTheme(getPreferredColorScheme());
   const {themestate}= useState(theme)
  
 
