@@ -42,9 +42,9 @@ function NavBar() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
 
   const {setTheme,themestate}   = useNextTheme(getPreferredColorScheme());
- 
+  const thm= theme? === 'system' ? systemTheme : theme;
+console.log(thm)
   const [switchstate, setSwitchState] = useState(themestate ? true:false );
-
 
 
 
