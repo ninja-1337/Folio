@@ -31,6 +31,11 @@ const Home: NextPage = () => {
             description="A beach booking app--In Progress--"
             documentation="https://sunspot-bay.vercel.app/"
           />
+             <TechnologyCard
+            name="FlashCards"
+            description="Memorization tools"
+            documentation="https://flash-card-ninja.vercel.app/"
+          />
           <TechnologyCard
             name="Pay Trends"
             description="Payment data for diferent job positions around the world"
