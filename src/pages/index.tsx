@@ -26,21 +26,23 @@ const Home: NextPage = () => {
             description="A variety of agents for different tasks powered by GPT-3 "
             documentation="https://ninja1337.com/"
           />
+               <TechnologyCard
+            name="FlashCards"
+            description="Memorization tools"
+            documentation="https://flash-card-ninja.vercel.app/"
+          />
+              <TechnologyCard
+            name="Pay Trends"
+            description="Payment data for diferent job positions around the world"
+            documentation="https://trend-teal.vercel.app/"
+          />
              <TechnologyCard
             name="SunSpot"
             description="A beach booking app--In Progress--"
             documentation="https://sunspot-bay.vercel.app/"
           />
-             <TechnologyCard
-            name="FlashCards"
-            description="Memorization tools"
-            documentation="https://flash-card-ninja.vercel.app/"
-          />
-          <TechnologyCard
-            name="Pay Trends"
-            description="Payment data for diferent job positions around the world"
-            documentation="https://trend-teal.vercel.app/"
-          />
+        
+      
           <TechnologyCard
             name="Stripe Shop"
             description="A template for an e-shop with shopping cart using react and Stripe"
