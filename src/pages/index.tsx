@@ -29,7 +29,7 @@ const Home: NextPage = () => {
                <TechnologyCard
             name="FlashCards"
             description="Memorization tool"
-            documentation="https://flashcard-pearl.vercel.app/"
+            documentation="https://flashcard-pearl.vercel.app/view"
           />
        
         </div>
