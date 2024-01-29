@@ -26,10 +26,16 @@ const Home: NextPage = () => {
             description="A variety of agents for different tasks powered by GPT-3 "
             documentation="https://ai-chatgpt-ninja-1337.vercel.app/"
           />
-               <TechnologyCard
+          <TechnologyCard
             name="FlashCards"
             description="Memorization tool"
             documentation="https://flashcard-pearl.vercel.app/view"
+          />
+
+          <TechnologyCard
+            name="PalDeck"
+            description="Palworld Poke-Dex"
+            documentation="https://paldeck.pro"
           />
        
         </div>
