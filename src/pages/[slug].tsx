@@ -15,10 +15,10 @@ const Home: NextPage = () => {
       setTimeout(()=>{visit("https://ai-chatgpt-ninja-1337.vercel.app/")}, 3000)
       break;
     case 'hack-the-box':
-      setTimeout(()=>{visit("https://paldeck.pro/")}, 3000)
+      setTimeout(()=>{visit("https://app.hackthebox.com/profile/267441")}, 3000)
       break;
     default:
-      console.log(`Sorry, we are out of`);
+      
   }
 
   
